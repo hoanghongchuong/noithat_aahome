@@ -1,0 +1,68 @@
+$white: #fff;
+$black: #000;
+$red-1: #ff0000;
+$brown-1: #482d24;
+$yellow-1: #c19b76;
+
+$black-1: #363636;
+$black-2: #201d1a;
+$black-3: #141210;
+
+$grey-1: #f2f2f2;
+$grey-2: #707070;
+$grey-3: #b7b7b7;
+$grey-4: #e9e9e9;
+$grey-5: #b7b7b7;
+
+$pink-1: $yellow-1;
+
+$color-default: $black-1;
+
+$color-list: (
+		white:$white,
+		black-1:$black-1,
+		pink-1:$pink-1,
+		red-1: $red-1,
+		yellow-1: $yellow-1,
+		brown-1: $brown-1,
+);
+
+//bootstrap
+//Color
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+$theme-colors: (
+		primary: $blue,
+		secondary: $gray-600,
+		success: $green,
+		info: $cyan,
+		warning: $yellow,
+		danger: $red,
+		light: $gray-100,
+		dark: $gray-800,
+		yellow-1: $yellow-1,
+		brown-1: $brown-1,
+		white: $white,
+		black-1: $black-1,
+		black-2: $black-2,
+		black-3: $black-3,
+) !default;

@@ -1,0 +1,197 @@
+.vk-home{
+	&__nav{
+		color:$grey-3;
+		font-size: 14px;
+		text-align: center;
+		justify-content: center;
+		margin-bottom: 20px;
+		a{
+			display: inline-block;
+			padding:14px 25px;
+			border:1px solid $grey-4;
+			margin:0 10px;
+			width: 100%;
+			@media(min-width:$tablet_landscape_width){
+				width: auto;
+			}
+			&.active{
+				color:$black-1;
+			}
+
+		}
+	}
+	&__title-box{
+		text-align: center;
+		padding: 30px 0;
+		@media(min-width:$tablet_landscape_width){
+			padding: 50px 0;
+		}
+	}
+	&__title{
+		font-size: 24px;
+		font-weight: 400;
+		margin-bottom: 10px;
+		@media(min-width:$tablet_landscape_width){
+			font-size: 36px;
+		}
+	}
+	&__title-sub{
+		p{
+			margin-bottom: 0;
+		}
+
+	}
+	&--about{
+		padding-bottom: 60px;
+	}
+	&--service{
+		background-color: $grey-1;
+		padding-bottom: 50px;
+	}
+	&--project{
+		padding-bottom: 60px;
+	}
+	&--material{
+		background-color: $grey-1;
+		padding-bottom: 50px;
+	}
+	&--testimonial{
+		padding-bottom: 60px;
+	}
+}
+.vk-partner{
+	&__list{
+		padding-bottom: 40px;
+	}
+}
+.vk-service-item{
+	&--style-1{
+		text-align: center;
+		padding:20px 30px;
+		border:1px solid $grey-4;
+		border-radius: 5px;
+		height: 100%;
+		.vk-img{
+			@include size(98px);
+			border:1px solid $brown-1;
+			display: inline-flex;
+			border-radius: 50%;
+		}
+		.vk-service-item{
+			&__brief{
+				padding-top: 25px;
+			}
+			&__text{
+				font-size: 14px;
+				p{
+					margin-bottom: 0;
+				}
+			}
+			&__title{
+				font-size: 21px;
+				font-weight: 400;
+			}
+		}
+
+	}
+	&--style-2{
+		text-align: center;
+		position: relative;
+		color:$white;
+		margin-top: 20px;
+
+		.vk-img{
+
+		}
+		.vk-btn{
+			min-height: 50px;
+			min-width: 150px;
+			font-size: 12px;
+			text-transform: uppercase;
+		}
+		.vk-service-item{
+			&__wrapper{
+
+				top: 25px;
+				bottom: 25px;
+				left: 25px;
+				right: 25px;
+			}
+		&__button{
+			padding-top: 10px;
+			display: none;
+		}
+			&__title{
+				font-size: 24px;
+				font-weight: 400;
+				margin-bottom: 15px;
+			}
+			&__text{
+				font-size: 14px;
+				display: none;
+
+			}
+			&__brief{
+				position: absolute;
+				padding: 20px;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: rgba($black-1,0.4);
+				@media(min-width:$tablet_landscape_width){
+					padding: 50px;
+				}
+				&:after{
+					content:'';
+					position: absolute;
+					top: 10px;
+					right: 10px;;
+					bottom: 10px;;
+					left: 10px;;
+					background-color: rgba($black-1,0.5);
+					z-index: -1;
+					opacity: 0;
+					@include transition(0.3s);
+					@media(min-width:$tablet_landscape_width){
+						top: 25px;
+						right: 25px;;
+						bottom: 25px;;
+						left: 25px;;
+					}
+				}
+			}
+		}
+		&:hover{
+			.vk-service-item{
+				&__brief{
+
+					&:after{
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+	}
+
+}
+.vk-partner-item{
+	text-align: center;
+	padding:15px 0;
+	.vk-img{
+		height: 130px;
+		margin-bottom: 10px;
+	}
+	&__text{
+		line-height: 1.5;
+		p{
+			margin-bottom: -0px;
+			line-height: inherit;
+		}
+	}
+}

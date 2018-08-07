@@ -1,0 +1,61 @@
+$card-border-width:     1px;
+$card-border-color:     #ccc;
+$card-border-radius:    0;
+
+$card-spacer-x:         10px;
+$card-spacer-y:         10px;
+
+$card-cap-bg :          rgba(0,0,0,.03);
+
+.vk-card {
+    @include border-radius(0);
+    border: $card-border-width solid $card-border-color;
+    &:not(:last-child){
+        border-bottom:none;
+    }
+    &:not(:first-child){
+        margin-top: -$card-border-width;
+    }
+    &__link{
+        display: block;
+        flex:1 1 auto;
+        width:1%;
+        padding:$card-spacer-x $card-spacer-y;
+    }
+    &__header{
+        background-color: rgba(0,0,0,.03);
+        //border: $card-border-width solid $card-border-color;
+        border-bottom:0;
+        padding: 0;
+        &:first-child{
+            @include border-radius($card-border-radius);
+        }
+
+
+    }
+    &__heading{
+        margin-bottom: 0;
+        display: flex;
+        font-size: 18px;
+    }
+    &__body {
+        padding: 10px;
+        border-top:$card-border-width solid $card-border-color;
+    }
+    &__arrow{
+        border-left:$card-border-width solid $card-border-color;
+        padding:$card-spacer-x $card-spacer-y*2;
+        ._icon{
+            @include transform(rotate(90deg));
+            @include transition(0.3s);
+        }
+
+        &.collapsed{
+            ._icon{
+                @include transform(rotate(0deg));
+            }
+        }
+    }
+}
+
+

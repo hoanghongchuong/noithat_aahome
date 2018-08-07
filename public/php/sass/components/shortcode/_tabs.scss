@@ -1,0 +1,143 @@
+//
+// Tabs
+//
+
+$nav-link-padding-y:            .5rem ;
+$nav-link-padding-x:            1rem ;
+$nav-link-disabled-color:       #868e96 ;
+
+$nav-tabs-border-color:                       $grey-1 ;
+$nav-tabs-border-width:                       1px ;
+$nav-tabs-border-radius:                      0 ;
+$nav-tabs-link-hover-border-color:            #e9ecef ;
+$nav-tabs-link-active-color:                  #495057 ;
+$nav-tabs-link-active-bg:                     $white ;
+$nav-tabs-link-active-border-color:           #ddd ;
+
+$nav-pills-border-radius:     0 ;
+$nav-pills-link-active-color: $white ;
+$nav-pills-link-active-bg:    blue ;
+
+.vk-tab__nav {
+    //display: flex;
+    //flex-wrap: wrap;
+    //padding-left: 0;
+    //margin-bottom: 0;
+    //list-style: none;
+}
+
+.vk-tab__link {
+    //display: block;
+    padding: $nav-link-padding-y $nav-link-padding-x;
+
+    @include hover-focus {
+        //text-decoration: none;
+    }
+
+    // Disabled state lightens text
+    &.disabled {
+        color: $nav-link-disabled-color;
+    }
+}
+
+
+.vk-nav{
+    &__tabs{
+        border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+    }
+    .vk-nav__item{
+        margin-bottom: -$nav-tabs-border-width;
+    }
+
+    .vk-nav__link {
+        border: $nav-tabs-border-width solid transparent;
+        @include border-top-radius($nav-tabs-border-radius);
+
+        @include hover-focus {
+            border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
+        }
+
+        &.disabled {
+            color: $nav-link-disabled-color;
+            background-color: transparent;
+            border-color: transparent;
+        }
+    }
+
+    .vk-nav__link.active,
+    .vk-nav__item.show .vk-nav__link {
+        color: $nav-tabs-link-active-color;
+        background-color: $nav-tabs-link-active-bg;
+        border-color: $nav-tabs-link-active-border-color $nav-tabs-link-active-border-color $nav-tabs-link-active-bg;
+    }
+
+    .vk-nav__dropdown-menu {
+        // Make dropdown border overlap tab border
+        margin-top: -$nav-tabs-border-width;
+        // Remove the top rounded corners here since there is a hard edge above the menu
+        @include border-top-radius(0);
+    }
+}
+
+
+// Tabbable tabs
+//
+// Hide tabbable panes to start, show them when `.active`
+
+.vk-tab__content {
+
+    > .vk-tab__pane {
+
+    }
+
+}
+
+//.tab-content {
+//    > .tab-pane {
+//        display: none;
+//    }
+//    > .active {
+//        display: block;
+//    }
+//}
+
+
+
+
+
+//.nav-tabs {
+//    border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+//
+//    .nav-item {
+//        margin-bottom: -$nav-tabs-border-width;
+//    }
+//
+//    .nav-link {
+//        border: $nav-tabs-border-width solid transparent;
+//        @include border-top-radius($nav-tabs-border-radius);
+//
+//        @include hover-focus {
+//            border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
+//        }
+//
+//        &.disabled {
+//            color: $nav-link-disabled-color;
+//            background-color: transparent;
+//            border-color: transparent;
+//        }
+//    }
+//
+//    .nav-link.active,
+//    .nav-item.show .nav-link {
+//        color: $nav-tabs-link-active-color;
+//        background-color: $nav-tabs-link-active-bg;
+//        border-color: $nav-tabs-link-active-border-color $nav-tabs-link-active-border-color $nav-tabs-link-active-bg;
+//    }
+//
+//    .dropdown-menu {
+//        // Make dropdown border overlap tab border
+//        margin-top: -$nav-tabs-border-width;
+//        // Remove the top rounded corners here since there is a hard edge above the menu
+//        @include border-top-radius(0);
+//    }
+//}

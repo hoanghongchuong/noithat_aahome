@@ -1,0 +1,784 @@
+//OVERRIDE PLUGIN
+//bootstrap
+.container {
+    position: relative;
+    @media (min-width: $pc_width) {
+        max-width: $pc_width;
+    }
+}
+.no-gutters .col,.no-gutters [class*=col-] {
+    padding-right: 0;
+    padding-left: 0
+}
+.vk-banner{
+    background-color: $white;
+    img{
+        width: 100%;
+    }
+}
+.vk-form{
+    &--register{
+        .vk-btn{
+            min-width: 150px;
+            min-height: 50px;
+            font-size: 13px;
+            font-weight: 400;
+            text-transform: uppercase;
+            border-radius: 100px;
+        }
+        .form-group{
+            margin-bottom: 30px;
+        }
+        .form-control{
+            border-radius: 0;
+            border:none;
+            border-bottom:1px solid $brown-1;
+            box-shadow: none !important;
+            padding-left: 0;
+        }
+    }
+    &--search{
+        position: relative;
+        .vk-btn{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: transparent;
+            border-color: transparent;
+            @include hover-focus{
+                color:$white;
+            }
+        }
+        .form-control{
+            min-height: 50px;
+            padding-right: 70px;
+        }
+    }
+}
+
+.d-inline-block, .d-inline-flex {
+    vertical-align: top;
+}
+
+
+
+$input-border-color:                #ccc;
+$input-focus-border-color:          $pink-1;
+
+$input-box-shadow:                  inset 0 1px 1px rgba($black,.075) !default;
+$btn-focus-box-shadow:              0 0 0 3px rgba($input-focus-border-color, .25) !default;
+$input-focus-box-shadow:            $input-box-shadow, $btn-focus-box-shadow !default;
+
+//custom form
+$custom-control-indicator-box-shadow:           inset 0 .25rem .25rem rgba($black,.1) !default;
+$custom-control-indicator-focus-box-shadow:     0 0 0 1px $white, 0 0 0 3px  lighten($input-focus-border-color, 35%) !default;
+$custom-control-indicator-active-bg:            lighten($input-focus-border-color, 35%) !default;
+$custom-control-indicator-disabled-bg:          $gray-200 !default;
+$custom-control-description-disabled-color:     $gray-600 !default;
+
+//checkbox
+$custom-checkbox-indicator-border-radius: 4px !default;
+$custom-checkbox-indicator-indeterminate-bg: $input-focus-border-color;
+
+
+.form-control {
+    @include box-shadow-none();
+    @include border-radius(5px);
+    min-height: 40px;
+    border-color: $input-border-color;
+    font-size: inherit;
+    color: inherit;
+    &:focus {
+        color: inherit;
+        border-color: $input-focus-border-color;
+        outline: none;
+        @include box-shadow($input-focus-box-shadow);
+
+    }
+}
+.input-group-addon{
+    background-color: $white;
+}
+
+.custom-control-input {
+    &:focus ~ .custom-control-label::before {
+
+        box-shadow: $custom-control-indicator-focus-box-shadow;
+    }
+
+    &:active ~ .custom-control-label::before {
+        background-color: $custom-control-indicator-active-bg;
+    }
+
+}
+
+.custom-checkbox,.custom-radio {
+    .custom-control-input:checked ~ .custom-control-label {
+        &::before {
+           background-color: $input-focus-border-color;
+        }
+    }
+
+}
+
+
+// Tooltips
+$tooltip-bg:                  $black ;
+$tooltip-arrow-color:         $tooltip-bg;
+$tooltip-color:               $white;
+.tooltip {
+    &.bs-tooltip-top {
+        .arrow::before {
+            border-top-color: $tooltip-arrow-color;
+        }
+    }
+    &.bs-tooltip-right {
+        .arrow::before {
+            border-right-color: $tooltip-arrow-color;
+        }
+    }
+    &.bs-tooltip-bottom {
+        .arrow::before {
+            border-bottom-color: $tooltip-arrow-color;
+        }
+    }
+    &.bs-tooltip-left {
+        .arrow::before {
+            border-left-color: $tooltip-arrow-color;
+        }
+    }
+}
+
+// Wrapper for the tooltip content
+.tooltip-inner {
+    color: $tooltip-color;
+    background-color: $tooltip-bg;;
+}
+
+
+
+
+//mmenu
+#hamburger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background: $pink-1;
+    opacity: .8;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    width: 100%;
+    @media(min-width: $tablet_landscape_width) {
+        display: none;
+    }
+    .hamburger {
+        margin-left: 15px;
+        font-size: 26px;
+
+        &:before {
+            content: "\f0c9";
+            font-family: FontAwesome;
+            color: $white;
+
+        }
+    }
+}
+
+.animsition-loading {
+    background-color: transparent;
+    border-top: 2px solid rgba($pink-1, .2);
+    border-right: 2px solid rgba($pink-1, .2);
+    border-bottom: 2px solid rgba($pink-1, .2);
+    border-left: 2px solid $pink-1;
+}
+
+.mm-opened {
+    #hamburger {
+        opacity: 1;
+        .hamburger {
+            &:before {
+                content: "\f00d";
+                @include transition(.3s);
+            }
+        }
+    }
+
+}
+
+.mm-slideout {
+    z-index: auto;
+}
+
+
+//BASE ELEMENT
+//scrollUp
+#scrollUp {
+    bottom: 20px;
+    right: 20px;
+    background-color: $pink-1;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    opacity: .5;
+    padding: 10px 20px;
+    -webkit-transition: background 300ms linear;
+    -moz-transition: background 300ms linear;
+    -o-transition: background 300ms linear;
+    transition: background 300ms linear;
+    -webkit-backface-visibility: hidden;
+
+    &--inverse {
+        background-color: $color-default;
+        color: $black-1;
+    }
+
+    &:hover {
+        opacity: 1;
+        //background-color: $pink-1;
+        //color:$white;
+    }
+}
+
+//vk-img
+.vk-img {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    @include transition(0.3s);
+    display: flex;
+
+    &__link{
+        display: block;
+        position: relative;
+    }
+
+    img {
+        @include transition(0.3s);
+        width: 100%;
+    }
+
+    &:focus, &:hover {
+        outline: none;
+        .vk-img__img {
+            @include transform(scale(1.1));
+        }
+    }
+
+    //modify
+    &--mw100{
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        img {
+            width:auto;
+            height:auto;
+            max-width:100%;
+
+        }
+    }
+    &--cover{
+        .vk-img__link{
+            height:100%;
+        }
+        img{
+            height:100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+    }
+
+}
+
+//vk-table
+.vk-table {
+    width: 100%;
+}
+
+//vk-list
+.vk-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &--inline {
+        display: inline-block;
+        vertical-align: top;
+        >li {
+            float: left;
+        }
+    }
+
+    &--icon {
+        li {
+            position: relative;
+        }
+        &-mod-1 {
+            li {
+                position: relative;
+                padding-left: 35px;
+                line-height: 1.2;
+                + li {
+                    margin-top: 13px;
+                }
+
+            }
+            .vk-icon {
+                position: absolute;
+                left: 0px;
+                top: -2px;
+                font-size: 24px;
+                color: $pink-1;
+            }
+        }
+
+        &-mod-2 {
+            li {
+                &:before {
+                    content: "\f105";
+                    font-family: FontAwesome;
+                    padding-right: 8px;
+                    color: $pink-1;
+                    display: inline-block;
+                }
+            }
+
+        }
+
+    }
+
+    &--social {
+        li {
+            font-size: 24px;
+            padding-right: 25px;
+            &:last-child {
+                padding-right: 0px;
+            }
+        }
+    }
+
+}
+
+//parallax
+.vk-parallax {
+    background-position: center;
+    @media (max-width: 991px) {
+        background-size: cover;
+        background-position: center !important;
+    }
+
+}
+
+//background image
+$background-image-list: (
+        1:1,
+        2:2,
+        3:3,
+);
+
+//vk-background
+.vk-background {
+    position:relative;
+    //size
+    &--fixed {
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    &--cover {
+        background-size: cover;
+    }
+    &--contain {
+        background-size: contain;
+    }
+
+    //position
+    &--center {
+        background-position: center center;
+        &-top {
+            background-position: center top;
+        }
+        &-bottom {
+            background-position: center bottom;
+        }
+        &-left {
+            background-position: left center;
+        }
+        &-right {
+            background-position: right center;
+        }
+
+    }
+    &--top {
+        background-position-y: top;
+        &-left {
+            background-position: left top;
+        }
+        &-right {
+            background-position: right top;
+        }
+    }
+    &--bottom {
+        background-position-y: bottom;
+        &-left {
+            background-position: left bottom;
+        }
+        &-right {
+            background-position: right bottom;
+        }
+    }
+
+    //overlay
+    &__overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        //opacity
+        @for $i from 1 through 9 {
+            &--op-#{$i}0 {
+                opacity: $i/10;
+            }
+        }
+    }
+
+    //background color
+    @each $name, $color in $color-list {
+        &--#{$name} {
+            background-color: $color;
+        }
+    }
+
+    //background image
+    @each $index, $name in $background-image-list {
+        &--image-#{$index} {
+            background-image: url(../images/background/#{$name}.jpg);
+        }
+    }
+}
+
+
+// vk-text
+.vk-text{
+    @each $name, $color in $color-list {
+        &--#{$name} {
+            color: $color;
+        }
+    }
+}
+
+//vk-position element
+.vk-position {
+    &--relative {
+        position: relative;
+    }
+    &--relative {
+        position: relative;
+    }
+    &--fixed {
+        position: fixed;
+    }
+    &--stiky {
+        position: sticky;
+    }
+}
+
+//distance
+.vk-distance {
+    &--default {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    &--bottom {
+        padding-bottom: 60px;
+    }
+    &--top {
+        padding-bottom: 60px;
+    }
+}
+.vk-modal{
+
+    @media(min-width:$tablet_landscape_width){
+        min-width: 700px;
+    }
+    &__wrapper{
+        padding:30px;
+        @media(min-width:$tablet_landscape_width){
+            padding:50px 100px;
+        }
+    }
+}
+//Slider
+.vk-slider {
+    position: relative;
+
+
+
+    .vk-arrow {
+        padding:15px 10px;
+
+        position: absolute ;
+        z-index: 1;
+        top:50% ;
+        border: none ;
+        opacity: .5;
+        &:hover, &:focus {
+
+            opacity: 1;
+        }
+        &.next {
+            right: 0;
+
+        }
+        &.prev {
+            left: 0;
+        }
+    }
+    &--style-1{
+        .vk-arrow-dots{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            @include transform(translateX(-50%));
+
+            li {
+                padding: 0 5px;
+                line-height: 1;
+                button {
+                    text-indent: 100px;
+                    @include size(7px);
+                    position: relative;
+                    background-color: $yellow-1;
+                    border: 0px solid #fff;
+                    @include border-radius(50%);
+                    overflow: hidden;
+                    outline: none;
+                    padding: 0;
+
+                }
+
+                &.slick-active {
+                    button {
+                        background-color: transparent;
+                        box-shadow: 0 0 0 2px $yellow-1;
+                    }
+                }
+            }
+        }
+    }
+    &--slider-2{
+        .vk-arrow-dots{
+            position: absolute;
+            bottom: 20px ;
+            left: 25%;
+            //@include transform(translateX(-50%));
+
+            li {
+                padding: 0 5px;
+                line-height: 1;
+                button {
+                    text-indent: 100px;
+                    @include size(7px);
+                    position: relative;
+                    background-color: $white;
+                    border: 0px solid #fff;
+                    @include border-radius(50%);
+                    overflow: hidden;
+                    outline: none;
+                    padding: 0;
+
+                }
+
+                &.slick-active {
+                    button {
+                        background-color: transparent;
+                        box-shadow: 0 0 0 2px $white;
+                    }
+                }
+            }
+        }
+    }
+    &--style-3{
+        .vk-arrow-dots{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            @include transform(translateX(-50%));
+
+            li {
+                padding: 0 5px;
+                line-height: 1;
+                button {
+                    text-indent: 100px;
+                    @include size(7px);
+                    position: relative;
+                    background-color: $grey-3;
+                    border: 0px solid #fff;
+                    @include border-radius(50%);
+                    overflow: hidden;
+                    outline: none;
+                    padding: 0;
+
+                }
+
+                &.slick-active {
+                    button {
+                        background-color: transparent;
+                        box-shadow: 0 0 0 2px $grey-3;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Breadcrumb
+.vk-breadcrumb {
+    color: inherit;
+    font-size: 14px;
+    &__list {
+        li{
+            &:not(:first-child) {
+                &:before {
+                    content: '/';
+                    padding: 0px 5px;
+                }
+            }
+
+            &:last-child {
+                text-transform: none;
+            }
+        }
+    }
+
+
+
+}
+
+//Pagination
+.vk-pagination {
+    text-align: center;
+    @media(min-width: $tablet_landscape_width) {
+        text-align: right;
+    }
+
+    &__list{
+        display: inline-block;
+        vertical-align: top;
+        li{
+            padding: 0 5px;
+            a{
+                font-size: inherit;
+                border: 1px solid;
+                display: flex;
+                @include size(30px);
+                align-items: center;
+                justify-content: center;
+            }
+            &.active, &:hover {
+                a {
+                    color: $black-1;
+                }
+            }
+        }
+    }
+
+
+
+
+}
+
+//calculator
+$calculator_border_color:  $grey-1;
+$calculator_border_color_hover:  $pink-1;
+$calculator_border_radius:  5px;
+$calculator_border_width:  1px;
+
+.vk-calculator {
+    display: inline-flex;
+    vertical-align: top;
+    .vk-btn {
+        background-color: transparent;
+        color: $black-1;
+        border: $calculator_border_width solid $calculator_border_color;
+        border-right: none;
+        @include border-radius($calculator_border_radius 0 0 $calculator_border_radius);
+        outline: none;
+        padding: 10px;
+        width: 90px;
+
+        &--plus {
+            @include border-radius(0 $calculator_border_radius $calculator_border_radius 0);
+            border-left: none;
+            border-right: $calculator_border_width solid $calculator_border_color;
+        }
+    }
+
+    input {
+        width: 50px;
+        text-align: center;
+        padding: 5px;
+        border-left: none;
+        border-right: none;
+        font-size: 16px;
+        @include border-radius(0);
+        border-color: $calculator_border_color;
+        border-width: $calculator_border_width;
+        background-color: transparent;
+        &:focus {
+            @include box-shadow(none);
+            border-top-color: $calculator_border_color_hover;
+            border-bottom-color: $calculator_border_color_hover;
+
+            ~.vk-calculator__button {
+                border-color: $calculator_border_color_hover;
+            }
+        }
+    }
+
+    &:hover {
+        button, .form-control {
+            border-color: $calculator_border_color_hover;
+        }
+    }
+
+}
+
+.vk-round{
+    border-radius: 100px;
+}
+
+.vk-rounded{
+    border-radius: 50%;
+}
+
+
+//page
+
+//vk-sidebar
+.vk-sidebar{
+
+}
+
+//vk-page
+.vk-page{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

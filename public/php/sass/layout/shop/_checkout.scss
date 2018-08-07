@@ -1,0 +1,78 @@
+
+$checkout_border_color: $grey-1;
+
+.vk-checkout{
+    padding-top: 50px;
+    &__contact{
+
+    }
+    &__contact-list{
+        ._icon{
+            position: absolute;
+            color: $pink-1;
+            left:0;
+            top:3px;
+
+        }
+        .vk-list__item{
+            position:relative;
+            padding-left: 25px;
+
+        }
+    }
+    &__box{
+        padding:20px 30px;
+        border:1px solid $checkout_border_color;
+        margin-bottom:30px;
+    }
+    &__title{
+        font-size: 18px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    &__form-info{
+        .form-control{
+            background-color: transparent;
+            @include placeholder-color($black-1);
+        }
+    }
+    select{
+        option{
+            //color: $black-1;
+        }
+    }
+    &__fee{
+        p{
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &__total{
+        padding-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+.vk-bank{
+    padding-top:10px;
+    &__item{
+        display: flex;
+        border:1px solid $checkout_border_color;
+        margin:5px 0;
+
+    }
+    .vk-img{
+        padding:10px;
+        border-right:1px solid $checkout_border_color;
+    }
+    &__brief{
+        padding: 10px;
+        p{
+            margin-bottom: 0;
+        }
+    }
+
+}

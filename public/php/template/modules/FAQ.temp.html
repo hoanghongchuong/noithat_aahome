@@ -1,0 +1,21 @@
+<!-- BEGIN: main -->
+<div class="vk-toggle {CLASS_NAME}">
+    <div class="panel-group" id="{PARENT}" role="tablist" aria-multiselectable="true">
+        <!-- BEGIN: loop -->
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#{PARENT}" href="#{LINK}" aria-expanded="true" aria-controls="{LINK}" class="collapsed">
+                        {TITLE}
+                    </a>
+                </h4>
+            </div>
+            <div id="{LINK}" class="panel-collapse collapse " role="tabpanel">
+                <div class="panel-body"> <p>{TEXT}</p></div>
+            </div>
+        </div>
+        <!-- END: loop -->
+    </div>
+</div>
+<!-- END: main -->
+

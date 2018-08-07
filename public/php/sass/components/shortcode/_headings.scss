@@ -1,0 +1,21 @@
+
+.vk-heading{
+
+    &__line{
+        margin-bottom: 10px;
+    }
+
+    &__content{
+        padding-bottom: 10px;
+        position: relative;
+        &:after {
+            content: '';
+            height: 3px;
+            width: 50px;
+            background-color: $pink-1;
+            position: absolute;
+            bottom: 0;
+            left: 0px;
+        }
+    }
+}
