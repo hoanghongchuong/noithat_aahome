@@ -2,10 +2,11 @@
     $setting = Cache::get('setting');
     $cateProject = DB::table('news_categories')->where('status',1)->where('parent_id', 0)->get();
     $provinces = DB::table('province')->get();
+    $slogan = DB::table('slogan')->get();
 ?>
 <header class="vk-header">
     <div class="vk-header__content">
-        <a href="index.html" class="vk-header__logo">
+        <a href="{{url('')}}" class="vk-header__logo">
             <img src="{{asset('upload/hinhanh/'.$setting->photo)}}" alt="">
         </a>
         <nav class="vk-header__menu">
@@ -61,35 +62,39 @@
         <div class="modal-content">
 
             <div class="vk-modal__wrapper">
-                <div class="vk-form  vk-form--register">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Họ tên">
+                <form action="{{ route('postContact') }}" method="post">
+                    {{ csrf_field() }}
+                    <div class="vk-form  vk-form--register">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="name" placeholder="Họ tên">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="phone" placeholder="Số điện thoại">
+                        </div>
+                        <div class="form-group">
+                            <select  class="form-control" name="province">
+                                <option value="">Chọn thành phố</option>
+                               @foreach($provinces as $province) 
+                                <option value="{{ $province->id }}">{{$province->name}}</option>
+                               @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="content">
+                                <option value="">Bạn cần tư vấn về?</option>
+                                @foreach($slogan as $s)
+                                <option value="{{ $s->id }}">{{$s->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group text-center">
+                            <button class="vk-btn vk-btn--submit vk-btn--brown-1">ĐĂNG KÝ</button>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Số điện thoại">
-                    </div>
-                    <div class="form-group">
-                        <select  class="form-control">
-                            <option value="">Chọn thành phố</option>
-                           @foreach($provinces as $province) 
-                            <option value="{{ $province->id }}">{{$province->name}}</option>
-                           @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control">
-                            <option value="">Bạn cần tư vấn về?</option>
-                            <option value="">Bạn cần tư vấn về?</option>
-                            <option value="">Bạn cần tư vấn về?</option>
-                        </select>
-                    </div>
-                    <div class="form-group text-center">
-                        <button class="vk-btn vk-btn--submit vk-btn--brown-1">ĐĂNG KÝ</button>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

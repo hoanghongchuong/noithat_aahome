@@ -21,7 +21,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="backend/news?type=tin-tuc"><i class="fa fa-circle-o"></i> <span>Danh sách tin tức</span></a></li>
-             <li><a href="backend/about/edit?type=tin-tuc"><i class="fa fa-circle-o"></i> <span>Mô tả</span></a></li>            
+             <li><a href="backend/about/edit?type=tin-tuc"><i class="fa fa-circle-o"></i> <span>Mô tả</span></a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -68,10 +68,19 @@
             <li><a href="backend/about/edit?type=ykien"><i class="fa fa-circle-o"></i> <span>Mô tả</span></a></li>            
           </ul>
         </li>
-       
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-edit"></i> <span>Đăng ký tư vấn</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">            
+            <li><a href="backend/contact"><i class="fa fa-envelope"></i> <span>Danh sách</span></a></li>
+            <li><a href="backend/slogan"><i class="fa fa-envelope"></i> <span>Nội dung cần tư vấn</span></a></li>
+          </ul>
+        </li>
+
         
-        <li><a href="backend/contact"><i class="fa fa-envelope"></i> <span>Quản lý liên hệ</span></a></li>
-        <li><a href="backend/newsletter?type=newsletter"><i class="fa fa-circle-o"></i> <span>Đăng ký nhận tin</span></a></li>
+        <!-- <li><a href="backend/newsletter?type=newsletter"><i class="fa fa-circle-o"></i> <span>Đăng ký nhận tin</span></a></li> -->
         <li><a href="backend/chinhanh"><i class="fa fa-envelope"></i><span>Quản lý chi nhánh</span></a></li>
         <li class="treeview">
           <a href="#">

@@ -17,7 +17,7 @@
       listid=listid.substr(1);   //alert(listid);
       if (listid=="") { alert("Bạn chưa chọn mục nào"); return false;}
       hoi= confirm("Bạn có chắc chắn muốn xóa?");
-      if (hoi==true) document.location = homeUrl()+"/admin/newsletter/"+listid+"/deleteList?type={{@$_GET[type]}}";
+      if (hoi==true) document.location = homeUrl()+"/backend/newsletter/"+listid+"/deleteList?type={{@$_GET[type]}}";
     });
     $("#send").click(function(){
       var listid="";
@@ -84,7 +84,7 @@
                                         <th>Số điện thoại</th>
                                         <th>Email</th>
                                         <th>Địa chỉ</th>
-                                        <th>webiste</th>
+                                        <!-- <th>webiste</th> -->
                                         <th>Nội dung</th>
                                         <!-- <th>Ngày gửi</th> -->
                                         <!-- <th class="text-center with_dieuhuong">Hoạt động</th> -->
@@ -108,10 +108,13 @@
                                         <td>{{$item->name}}</td>
                                         <td>{{$item->phone}}</td>
                                         <td>{{$item->email}}</td>
-                                        <?php $address = DB::table('province')->where('id',$item->province_id)->first(); ?>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->website }}</td>
-                                        <td>{{$item->content}}</td>
+                                        <?php $address = DB::table('province')->where('id',$item->province_id)->first();
+                                         ?>
+                                        <td>{{ @$address->name }}</td>
+                                        <!-- <td>{{ $item->website }}</td> -->
+                                        <?php $content = DB::table('slogan')->where('id',$item->slogan_id)->first();
+                                         ?>
+                                        <td>{{@$content->name}}</td>
                                         
                                         <td class="text-center with_dieuhuong">
                                             <button class="btn-toggle-status btn btn-{{ !$item->status? 'warning btn-access' : 'success' }} btn-sm" contact-id="{{ $item->id }}">
