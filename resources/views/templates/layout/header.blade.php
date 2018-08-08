@@ -15,7 +15,7 @@
                 <li class="vk-list__item"><a href="{{url('gioi-thieu')}}">Giới thiệu</a></li>
                 <li class="vk-list__item">
                     <a href="#">Dự án</a>
-                    <ul class="vk-list vk-menu__child">
+                    <ul class="vk-list vk-menu__child" style="z-index: 1">
                         @foreach($cateProject as $cate)
                         <li class="vk-list__item"><a href="{{url('du-an/'.$cate->alias)}}">{{$cate->name}}</a></li>
                         @endforeach
@@ -29,7 +29,6 @@
         <div class="vk-header__left">
             <div class="vk-header__search">
                 <a href="#searchForm" data-toggle="collapse" class="vk-btn vk-btn--outline-brown-1 vk-header__btn-search"><i class="ti-search"></i></a>
-
                 <div class="collapse vk-header__search-form" id="searchForm">
                     <form action="{{ route('searchNews') }}" method="get">
                         <div class="vk-form vk-form--search" >
